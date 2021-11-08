@@ -37,6 +37,13 @@ app.get("/greeting/:name", (req,res) => {
     res.send(`What\'s up ${name}?`);
 });
 
+app.get("/tip/:total/:tipPercentage", (req,res) => {
+    const total = req.params.total
+    const tipPercentage = req.params.tipPercentage
+
+    res.send(`Your tip should be $${total*(tipPercentage/100)}, or ${tipPercentage}% of ${total}`)
+});
+
 // tell app to listen
 app.listen(port, () =>{
     console.log(`Express is listening on port: ${port}`);

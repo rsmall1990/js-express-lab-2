@@ -71,7 +71,7 @@ app.get("/magic/:question", (req, res) => {
     const question = req.params.question;
     let random = Math.floor(Math.random() * eightBallResponseArray.length);
     
-    res.send(`You asked "${question}?", and the Magic 8 Ball responded: ${eightBallResponseArray[random]}`);
+    res.send(`<h1>You asked "${question}?", and the Magic 8 Ball responded: ${eightBallResponseArray[random]}</h1>`);
 });
 
 // tell app to listen
